@@ -1,0 +1,18 @@
+mutation UpdateScorecard($id: ID!, $desc: String, $name: String!, $tags: [EntityManagementTagInput!]) {
+  entityManagementUpdateScorecard(
+    id: $id
+    scorecardEntity: { description: $desc, name: $name, tags: $tags }
+  ) {
+    entity {
+      name
+      id
+      tags {
+        key
+        values
+      }
+      rules {
+        id
+      }
+    }
+  }
+}

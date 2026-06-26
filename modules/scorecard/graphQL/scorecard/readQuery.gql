@@ -1,0 +1,12 @@
+query FetchScorecardDetails($id: ID!) {
+  actor {
+    entityManagement {
+      entity(id: $id) {
+        ... on EntityManagementScorecardEntity {
+          name
+          description
+        }
+      }
+    }
+  }
+}

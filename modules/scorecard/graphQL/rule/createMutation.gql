@@ -1,0 +1,28 @@
+mutation CreateRule(
+  $name: String!
+  $description: String
+  $query: String!
+  $accounts: [Int!]!
+  $joinAccounts: [Int!]
+  $organizationId: ID!
+  $tags: [EntityManagementTagInput!]
+) {
+  entityManagementCreateScorecardRule(
+    scorecardRuleEntity: {
+      name: $name
+      description: $description
+      enabled: true
+      nrqlEngine: {
+        accounts: $accounts
+        joinAccounts: $joinAccounts
+        query: $query
+      }
+      scope: { id: $organizationId, type: ORGANIZATION }
+      tags: $tags
+    }
+  ) {
+    entity {
+      id
+    }
+  }
+}

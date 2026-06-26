@@ -1,0 +1,3 @@
+mutation AddRulesToCollection($collectionId: ID!, $rules: [ID!]!) {
+  entityManagementAddCollectionMembers(collectionId: $collectionId, ids: $rules)
+}

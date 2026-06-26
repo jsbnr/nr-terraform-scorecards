@@ -1,0 +1,3 @@
+mutation RemoveRulesFromCollection($collectionId: ID!, $rules: [ID!]!) {
+  entityManagementRemoveCollectionMembers(collectionId: $collectionId, ids: $rules)
+}

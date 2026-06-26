@@ -1,0 +1,39 @@
+mutation UpdateRule(
+  $id: ID!
+  $name: String!
+  $description: String
+  $query: String!
+  $accounts: [Int!]!
+  $joinAccounts: [Int!]
+  $tags: [EntityManagementTagInput!]
+) {
+  entityManagementUpdateScorecardRule(
+    id: $id
+    scorecardRuleEntity: {
+      description: $description
+      name: $name
+      enabled: true
+      nrqlEngine: {
+        accounts: $accounts
+        joinAccounts: $joinAccounts
+        query: $query
+      }
+      tags: $tags
+    }
+  ) {
+    entity {
+      id
+      name
+      description
+      nrqlEngine {
+        accounts
+        joinAccounts
+        query
+      }
+      tags {
+        key
+        values
+      }
+    }
+  }
+}

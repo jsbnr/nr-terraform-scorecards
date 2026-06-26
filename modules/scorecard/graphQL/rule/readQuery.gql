@@ -1,0 +1,21 @@
+query FetchScorecardRuleDetails($id: ID!) {
+  actor {
+    entityManagement {
+      entity(id: $id) {
+        ... on EntityManagementScorecardRuleEntity {
+          name
+          description
+          nrqlEngine {
+            accounts
+            joinAccounts
+            query
+          }
+          tags {
+            key
+            values
+          }
+        }
+      }
+    }
+  }
+}

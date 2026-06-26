@@ -1,0 +1,14 @@
+query FetchRulesCollection($rulesId: ID!) {
+  actor {
+    entityManagement {
+      collectionElements(filter: { collectionId: { eq: $rulesId } }) {
+        items {
+          ... on EntityManagementScorecardRuleEntity {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+}

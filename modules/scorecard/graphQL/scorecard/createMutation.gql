@@ -1,0 +1,17 @@
+mutation CreateScorecard($name: String!, $desc: String, $organizationId: ID!, $tags: [EntityManagementTagInput!]) {
+  entityManagementCreateScorecard(
+    scorecardEntity: {
+      description: $desc
+      name: $name
+      scope: { type: ORGANIZATION, id: $organizationId }
+      tags: $tags
+    }
+  ) {
+    entity {
+      id
+      rules {
+        id
+      }
+    }
+  }
+}
