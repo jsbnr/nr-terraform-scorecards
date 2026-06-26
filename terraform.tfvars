@@ -1,5 +1,5 @@
-scorecardName        = "Graphql TF Test 1"
-organizationId       = "01b81830-fb4e-4ce9-b6af-4dc1908e83a3"
+scorecardName        = "My TF Scorecard"
+organizationId       = "xxxx-xxxx-xxxx-xxxx-xxxx"
 scorecardDescription = "A scorecard created through terraform and graphql"
 
 scorecardTags = {
